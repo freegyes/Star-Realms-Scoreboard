@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Player.css'
-import ScoreControls from './ScoreControls'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Player.css';
+import ScoreControls from './ScoreControls';
 
 const Player = (props) => {
   return (
@@ -25,4 +25,4 @@ Player.propTypes = {
   changeScore: PropTypes.func.isRequired,
 }
 
-export default Player
+export default Player;

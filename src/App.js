@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import './App.css'
-import Player from './Player'
+import React, { Component } from 'react';
+import './App.css';
+import Player from './Player';
 
 const GAME = {
   defaultScore: 50,
@@ -8,31 +8,32 @@ const GAME = {
 }
 
 class App extends Component {
-  game = GAME
   constructor() {
-    super()
-    let players = []
-    this.game.defaultNames.map((name, index) => 
-      players.push({
+    super();
+    let players = GAME.defaultNames.map((name, index) => {
+      return {
         id: index, 
         name: name, 
-        score: this.game.defaultScore,
-      })
-    )
+        score: GAME.defaultScore,
+      }
+    });
     this.state = { 
-      players: players,
+      players,
     };
-  }
-  changeScore = (index, value) => {
-    let copyOfPlayers = this.state.players
-    copyOfPlayers[index].score += value
-    this.setState({players: copyOfPlayers})
-  }
+  };
+  changeScore(index, value) {
+    let players = this.state.players.slice();
+    players[index] = {
+      name: players[index].name, 
+      score: players[index].score + value,
+    };
+    this.setState({players});
+  };
   startNewGame = () => {
-    let copyOfPlayers = this.state.players
-    copyOfPlayers.map(player => player.score = this.game.defaultScore)
-    this.setState({players: copyOfPlayers})
-  }
+    let players = this.state.players.slice();
+    players.map(player => player.score = GAME.defaultScore);
+    this.setState({players});
+  };
   render() {
     return (
       <div className="App">
@@ -50,9 +51,8 @@ class App extends Component {
           <span onClick={this.startNewGame}>Start New Game</span>
         </div>  
       </div>
-      
     );
-  }
+  };
 }
 
-export default App
+export default App;

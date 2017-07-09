@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './ScoreControls.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './ScoreControls.css';
 
 const ScoreControls = (props) => {
-    let incrementValues = [-10, -5, -1, 1, 5, 10]
+    let incrementValues = [-10, -5, -1, 1, 5, 10];
     return (
       <div className="Score-controls">
         {incrementValues.map((value, index) =>
@@ -22,5 +22,5 @@ ScoreControls.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export default ScoreControls
+export default ScoreControls;
 
