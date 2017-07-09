@@ -31,7 +31,7 @@ class App extends Component {
   };
   startNewGame = () => {
     let players = this.state.players.slice();
-    players.map(player => player.score = GAME.defaultScore);
+    players.forEach(player => player.score = GAME.defaultScore);
     this.setState({players});
   };
   render() {
