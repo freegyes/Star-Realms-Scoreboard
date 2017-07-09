@@ -1,0 +1,25 @@
+.Player {
+  flex: 1 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: hsla(81, 28%, 90%, 1);
+}
+
+.Player:not(:last-child) {
+  border-right: 1px solid hsla(60, 1%, 14%, 1);
+}
+
+.Player-name {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.Player-score {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: hsla(81, 28%, 90%, .1);
+  font-size: 83px;
+}
