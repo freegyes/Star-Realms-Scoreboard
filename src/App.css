@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  height: 100vh; 
   background-image: url(./images/vista.jpg);
   background-size: cover;
   font-family: 'Titillium Web', sans-serif;
@@ -10,11 +10,17 @@
   display: flex;
 }
 
+@media only screen and (max-width: 720px)  {
+  .App-players {
+    flex-direction: column;
+  }  
+}
+
 .App-controls {
   position: fixed;
   bottom: 3%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%);
 }
 
 .App-controls span {
@@ -28,4 +34,14 @@
 .App-controls span:hover {
   background-color: hsla(120, 2%, 20%, .9);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 720px)  {
+  .App-controls {
+    left: auto;
+    bottom: 50%;
+    right: 0;
+    transform-origin: bottom right;
+    transform: translateX(-13%) rotate(-90deg) translateX(50%);
+  } 
 }

@@ -1,4 +1,5 @@
 .Player {
+  position: relative;
   flex: 1 1;
   text-align: center;
   display: flex;
@@ -11,9 +12,40 @@
   border-right: 1px solid hsla(60, 1%, 14%, 1);
 }
 
+@media only screen and (max-width: 720px)  {
+  .Player:first-child {
+    transform: rotate(180deg);
+    border-top: 1px solid hsla(60, 1%, 14%, 1);
+  }
+  .Player {
+    border-right: none;
+    border-bottom: 1px solid hsla(60, 1%, 14%, 1);
+  }  
+  
+}
+
 .Player-name {
   text-transform: uppercase;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 720px)  {
+  .Player-name {
+    position: absolute;
+  }
+
+  .Player:first-child .Player-name {
+    right: 0;
+    top: 50%;
+    transform: translateX(50%) rotate(90deg) translate(-17%, 50%);
+  }
+
+  .Player:not(:first-child) .Player-name {
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%) rotate(-90deg) translate(17%, 50%);
+  }
+
 }
 
 .Player-score {
@@ -21,5 +53,11 @@
   margin: 0 auto;
   border-radius: 3px;
   background-color: hsla(81, 28%, 90%, .1);
-  font-size: 83px;
+  font-size: 5.2em;
+}
+
+@media only screen and (max-width: 720px)  {
+  .Player-score {
+    font-size: 3em;
+  }
 }
